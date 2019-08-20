@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sbs.starter.dao.ArticleDao">
+	<select id="getList" parameterType="map" resultType="Article">
+		SELECT * FROM article ORDER BY id DESC
+	</select>
+</mapper>
