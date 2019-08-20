@@ -16,4 +16,6 @@ public interface ArticleDao {
 	public int getTotalCount();
 
 	public Article getOne(long id);
+
+	public void delete(long id);
 }

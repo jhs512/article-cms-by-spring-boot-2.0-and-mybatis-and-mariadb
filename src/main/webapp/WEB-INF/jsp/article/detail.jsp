@@ -26,7 +26,7 @@
 		<a href="./list">게시물 리스트</a>
 		<a href="./add">게시물 추가</a>
 		<a href="./modify?id=${article.id}">게시물 수정</a>
-		<a href="./doDelete?id=${article.id}">게시물 삭제</a>
+		<a onclick="if ( confirm('삭제하시겠습니까?') == false ) return false;" href="./doDelete?id=${article.id}">게시물 삭제</a>
 	</div>
 </body>
 </html>
