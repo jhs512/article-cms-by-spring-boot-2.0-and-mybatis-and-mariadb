@@ -6,6 +6,11 @@
 		SELECT *
 		FROM article ORDER BY id DESC
 	</select>
+	
+	<select id="getTotalCount" parameterType="map" resultType="int">
+		SELECT COUNT(*)
+		FROM article
+	</select>
 
 	<insert id="add" parameterType="map" useGeneratedKeys="true"
 		keyProperty="id">
