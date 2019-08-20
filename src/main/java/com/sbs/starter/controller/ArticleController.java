@@ -24,6 +24,8 @@ public class ArticleController {
 	@RequestMapping("/article/detail")
 	public String showDetail(Model model, long id) {
 		Article article = articleService.getOne(id);
+		
+		articleService.hitUp(id);
 
 		model.addAttribute("article", article);
 
