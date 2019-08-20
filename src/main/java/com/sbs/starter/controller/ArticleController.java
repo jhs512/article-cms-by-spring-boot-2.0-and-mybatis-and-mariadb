@@ -24,22 +24,22 @@ public class ArticleController {
 	@RequestMapping("/article/list")
 	public String showList(Model aModel) {
 		List<Article> list = articleService.getList();
-		
+
 		aModel.addAttribute("list", list);
 
 		return "article/list";
 	}
-	
+
 	@RequestMapping("/article/add")
 	public String showAdd() {
 		return "article/add";
 	}
-	
+
 	@RequestMapping("/article/doAdd")
 	@ResponseBody
 	public String doAdd(@RequestParam Map<String, Object> param) {
-		articleService.add(param);
-		
-		return "게시물이 추가되었습니다.";
+		long newId = articleService.add(param);
+
+		return newId + "번 게시물이 추가되었습니다.";
 	}
 }
