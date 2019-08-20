@@ -6,28 +6,36 @@
 		SELECT *
 		FROM article ORDER BY id DESC
 	</select>
-	
+
 	<select id="getOne" parameterType="long" resultType="Article">
 		SELECT *
 		FROM article
 		WHERE id = #{id}
 	</select>
-	
+
 	<select id="getTotalCount" parameterType="map" resultType="int">
 		SELECT COUNT(*)
 		FROM article
 	</select>
-	
+
 	<delete id="delete" parameterType="long">
 		DELETE FROM article
-		WHERE id = #{id}
+		WHERE id =
+		#{id}
 	</delete>
 
 	<insert id="add" parameterType="map" useGeneratedKeys="true"
-	keyProperty="id">
-	INSERT INTO article
-	SET regDate = NOW(),
-	title = #{title},
-	body = #{body}
+		keyProperty="id">
+		INSERT INTO article
+		SET regDate = NOW(),
+		title = #{title},
+		body = #{body}
 	</insert>
+
+	<update id="modify" parameterType="map">
+		UPDATE article
+		SET title = #{title},
+		body = #{body}
+		WHERE id = #{id}
+	</update>
 </mapper>
