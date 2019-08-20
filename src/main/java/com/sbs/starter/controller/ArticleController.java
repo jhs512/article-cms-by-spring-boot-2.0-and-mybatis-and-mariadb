@@ -20,14 +20,23 @@ import lombok.extern.slf4j.Slf4j;
 public class ArticleController {
 	@Autowired
 	ArticleService articleService;
-	
+
 	@RequestMapping("/article/detail")
 	public String showDetail(Model model, long id) {
 		Article article = articleService.getOne(id);
-		
+
 		model.addAttribute("article", article);
-		
+
 		return "article/detail";
+	}
+	
+	@RequestMapping("/article/modify")
+	public String showModify(Model model, long id) {
+		Article article = articleService.getOne(id);
+
+		model.addAttribute("article", article);
+
+		return "article/modify";
 	}
 
 	@RequestMapping("/article/list")
@@ -63,7 +72,7 @@ public class ArticleController {
 
 		return sb.toString();
 	}
-	
+
 	@RequestMapping("/article/doDelete")
 	@ResponseBody
 	public String doDelete(long id) {
