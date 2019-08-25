@@ -20,13 +20,13 @@ html {
 }
 
 .common-form>div>span {
-	width: 50px;
+	width: 150px;
 }
 
 .common-form>div>div {
-	width: calc(100% - 50px);
+	width: calc(100% - 150px);
 }
 
-.common-form>div>div>input[type="text"], .common-form>div>div>textarea {
+.common-form>div>div>input[type="text"], .common-form>div>div>textarea, .common-form>div>div>input[type="password"] {
 	width: 90%;
 }
