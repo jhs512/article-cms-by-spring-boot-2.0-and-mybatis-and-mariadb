@@ -1,6 +1,6 @@
 package com.sbs.starter.controller;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,17 +19,7 @@ public class HomeController {
 	MemberService memberService;
 
 	@RequestMapping("/home/main")
-	public String showMain(HttpSession session, Model model) {
-		long loginedMemberId = 0;
-
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (long) session.getAttribute("loginedMemberId");
-		}
-
-		Member loginedMember = memberService.getOne(loginedMemberId);
-		
-		model.addAttribute("loginedMember", loginedMember);
-
+	public String showMain(Model model) {
 		return "home/main";
 	}
 
