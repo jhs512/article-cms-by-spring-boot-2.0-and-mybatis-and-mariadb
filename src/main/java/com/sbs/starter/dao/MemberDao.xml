@@ -15,4 +15,17 @@
 		loginId = #{loginId},
 		loginPw = #{loginPw}
 	</insert>
+	
+	<select id="getMatchedOne" parameterType="string" resultType="Member">
+		SELECT * 
+		FROM member
+		WHERE loginId = #{loginId}
+		AND loginPw = #{loginPw}
+	</select>
+	
+	<select id="getOne" parameterType="long" resultType="Member">
+		SELECT *
+		FROM member
+		WHERE id = #{id}
+	</select>
 </mapper>
