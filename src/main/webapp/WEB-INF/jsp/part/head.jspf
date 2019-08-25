@@ -11,3 +11,22 @@
 </head>
 <body>
 	<h1 class="con">${pageName}</h1>
+
+	<div class="top-menu-1 con">
+		<a href="/member/doLogout">메인</a>
+
+		<c:if test="${isLogined}">
+			<a href="/member/doLogout">로그아웃</a>
+		</c:if>
+
+		<c:if test="${isLogined == false}">
+			<a href="/member/login">로그인</a>
+			<a href="/member/join">가입</a>
+		</c:if>
+
+		<a href="/article/list">게시물 리스트</a>
+
+		<c:if test="${isLogined}">
+			<a href="/article/add">게시물 작성</a>
+		</c:if>
+	</div>

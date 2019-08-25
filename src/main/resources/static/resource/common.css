@@ -30,3 +30,11 @@ html {
 .common-form>div>div>input[type="text"], .common-form>div>div>textarea, .common-form>div>div>input[type="password"] {
 	width: 90%;
 }
+
+.top-menu-1 a::before {
+	content:"[";
+}
+
+.top-menu-1 a::after {
+	content:"]";
+}
