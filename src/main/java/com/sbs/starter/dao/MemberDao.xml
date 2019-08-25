@@ -7,4 +7,12 @@
 		FROM member
 		WHERE loginId = #{loginId}
 	</select>
+	
+	<insert id="join" parameterType="map" useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO member
+		SET regDate = NOW(),
+		loginId = #{loginId},
+		loginPw = #{loginPw}
+	</insert>
 </mapper>
